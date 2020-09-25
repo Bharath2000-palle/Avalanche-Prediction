@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title >We Are With You</title>
+</head>
+</style>
+<style>
+body {
+  background-image: url('https://images.unsplash.com/photo-1584472206863-cb5950d689e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<body style="background-color:grey;" >
+	<h1 style="text-align:center;font-family:courier;color:coral"><b>Avalanche Prevention</b></h1>
+	<h2 style="text-align:center;"><i>Predicting Avalanche Formation</i></h2>
+	<!--Input given to our model -->
+    <form  style="text-align:center;"  action="{{ url_for('predict1')}}" method="post">
+    	Slope:<input title="integer" name="a" type="text"  required="required" value=''  /><br><br>
+       Snow Density: <input title="integer" name="b" type="text"  required="required" value=''  /><br><br>
+	Air Temperature :<input title="integer"  name="c" type="text"   required="required" value='' /><br><br>
+       Wind: <input title="integer" name="d" type="text"  required="required" value='' /><br><br>
+	<label for="Forest Density" >Forest Density:</label> 
+        <select name="e" id="Forest Density" > 
+            <option value=2>High</option> 
+            <option value=1>Medium</option> 
+            <option value=0>Low</option> 
+        </select> <br><br>
+	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+    
+	<p style="background-color:powderblue;text-align:center">{{prediction_text}}</p>
+		
+</body>
+</html>
